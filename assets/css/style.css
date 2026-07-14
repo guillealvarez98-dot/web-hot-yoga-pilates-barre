@@ -15,8 +15,8 @@
   --c-white: #FFFFFF;
 
   /* Tipografia */
-  --font-serif: Georgia, 'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', serif;
-  --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-serif: 'Fraunces', Georgia, 'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', serif;
+  --font-sans: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 
   /* Espaciado */
   --space-section: clamp(4rem, 10vw, 9rem);
@@ -280,11 +280,6 @@ h1, h2, h3, p { margin: 0; }
   color: var(--c-white);
   padding: 0 1.5rem;
 }
-.hero-logo {
-  height: 92px;
-  width: auto;
-  margin: 0 auto 1.75rem;
-}
 .hero-tagline {
   font-family: var(--font-serif);
   font-size: clamp(1.6rem, 4vw, 2.6rem);
@@ -387,14 +382,17 @@ h1, h2, h3, p { margin: 0; }
   max-width: 560px;
   margin: 0 auto;
 }
-.discipline-content h2 {
+.discipline-content h2, .discipline-content h1 {
   font-family: var(--font-serif);
   font-weight: 400;
   font-size: clamp(1.9rem, 3.6vw, 2.6rem);
   margin-bottom: 1.25rem;
 }
+.back-link { margin-bottom: 1.5rem; display: inline-flex; }
+.page-intro { margin-top: var(--header-h); }
 .discipline-content p { color: rgba(28,23,18,0.75); margin-bottom: 1.75rem; }
 .discipline-content p strong { color: var(--c-wood-dark); }
+.discipline-links { display: flex; flex-wrap: wrap; gap: 0.5rem 2rem; }
 
 .style-list {
   border-top: 1px solid rgba(28,23,18,0.15);
@@ -512,7 +510,7 @@ h1, h2, h3, p { margin: 0; }
   list-style: none;
 }
 .day-item summary::-webkit-details-marker { display: none; }
-.day-item:not([open]) .day-classes { display: none; }
+.day-item:not([open]) .day-classes, .day-item:not([open]) .day-note { display: none; }
 .day-name { font-family: var(--font-serif); font-size: 1.05rem; }
 .day-count {
   font-size: 0.78rem;
@@ -545,6 +543,53 @@ h1, h2, h3, p { margin: 0; }
 }
 .class-time { color: rgba(28,23,18,0.5); min-width: 130px; }
 .class-name { font-weight: 500; }
+.day-note {
+  font-size: 0.78rem;
+  font-style: italic;
+  color: rgba(28,23,18,0.55);
+  padding: 0 0 1.1rem;
+  margin: -0.5rem 0 0;
+}
+
+/* ==========================================================================
+   TESTIMONIOS
+   ========================================================================== */
+.testimonios {
+  padding: var(--space-section) 1.5rem;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  text-align: center;
+}
+.testimonios-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  margin-top: 2.5rem;
+  text-align: left;
+}
+.testimonio {
+  margin: 0;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(28,23,18,0.15);
+}
+.testimonio p {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.15rem;
+  line-height: 1.55;
+  color: rgba(28,23,18,0.85);
+  margin: 0 0 1.25rem;
+}
+.testimonio cite {
+  font-style: normal;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--c-wood);
+}
+@media (min-width: 780px) {
+  .testimonios-grid { grid-template-columns: repeat(3, 1fr); gap: 2.5rem; }
+}
 
 /* ==========================================================================
    TARIFAS
@@ -574,6 +619,35 @@ h1, h2, h3, p { margin: 0; }
 
 .tarifas-note { margin-top: 2.5rem; color: rgba(28,23,18,0.65); }
 .tarifas-note a { color: var(--c-wood-dark); font-weight: 600; text-decoration: underline; }
+
+/* ==========================================================================
+   GALERIA (paginas dedicadas de disciplina)
+   ========================================================================== */
+.pr-gallery {
+  padding: var(--space-section) 1.5rem;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  text-align: center;
+}
+.pr-gallery-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-top: 2.5rem;
+}
+.pr-gallery-photo {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+}
+@media (min-width: 640px) {
+  .pr-gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+  .pr-gallery-photo:nth-child(1) { grid-column: span 2; aspect-ratio: 16 / 10; }
+}
+@media (min-width: 960px) {
+  .pr-gallery-grid { grid-template-columns: repeat(3, 1fr); }
+  .pr-gallery-photo:nth-child(1) { grid-column: span 3; aspect-ratio: 21 / 9; }
+}
 
 /* ==========================================================================
    EL CENTRO

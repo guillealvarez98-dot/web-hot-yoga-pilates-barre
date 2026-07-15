@@ -189,8 +189,32 @@
         </details>
       </div>
 
-      <a href="https://wa.me/34680656038?text=Hola%2C%20me%20gustar%C3%ADa%20probar%20una%20clase%20de%20Hot%20Yoga"
-         class="link-arrow" target="_blank" rel="noopener">Quiero probar una clase</a>
+      <div class="info-list">
+        <details class="info-item">
+          <summary>Antes de tu primera clase</summary>
+          <div class="info-body">
+            <p>
+              No hace falta que reserves — nuestra sala es la de Hot Yoga
+              más grande de Europa, así que siempre hay sitio. Ven cuando
+              te venga bien.
+            </p>
+            <ul>
+              <li>Llega 10-15 minutos antes de tu primera clase.</li>
+              <li>Trae chanclas — las zapatillas de calle se dejan en una cajonera fuera del vestuario.</li>
+              <li>Necesitas esterilla y toalla; si no tienes, el primer día te las dejamos nosotros.</li>
+              <li>Mejor con botella o termo que mantenga el agua fría durante la clase.</li>
+              <li>Evita comidas abundantes en la hora y media previa a la clase.</li>
+              <li>Ven bien hidratado — con el calor se pierde bastante líquido durante la clase.</li>
+            </ul>
+          </div>
+        </details>
+      </div>
+
+      <div class="discipline-links">
+        <a href="hot-yoga.html" class="link-arrow">Conoce la sala</a>
+        <a href="https://wa.me/34680656038?text=Hola%2C%20me%20gustar%C3%ADa%20probar%20una%20clase%20de%20Hot%20Yoga"
+           class="link-arrow" target="_blank" rel="noopener">Quiero probar una clase</a>
+      </div>
     </div>
   </section>
 
@@ -203,8 +227,8 @@
       <p class="eyebrow">02 — Precisión y control</p>
       <h2>Pilates Reformer</h2>
       <p>
-        Trabajo de fuerza, movilidad y postura sobre máquina, en grupos
-        reducidos y con atención personalizada en cada movimiento.
+        Trabajo de fuerza, movilidad y postura sobre máquina, en grupos de
+        máximo 6 personas y con atención personalizada en cada movimiento.
         Resultados que se sienten desde la primera sesión.
       </p>
       <div class="discipline-links">
@@ -230,8 +254,11 @@
         técnica de ballet, fuerza funcional y control postural. Empezamos
         el <strong>1 de septiembre</strong> — y va a merecer la pena esperar.
       </p>
-      <a href="https://wa.me/34680656038?text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20las%20clases%20de%20Hot%20Barre"
-         class="link-arrow" target="_blank" rel="noopener">Quiero saber más</a>
+      <div class="discipline-links">
+        <a href="hot-barre.html" class="link-arrow">Conoce la sala</a>
+        <a href="https://wa.me/34680656038?text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20las%20clases%20de%20Hot%20Barre"
+           class="link-arrow" target="_blank" rel="noopener">Quiero saber más</a>
+      </div>
     </div>
   </section>
 
@@ -269,18 +296,18 @@
   </section>
 
   <!-- ============ HORARIOS ============ -->
-  <section class="horarios" id="horarios">
+  <section class="horarios" id="horarios" data-tabgroup="horarios">
     <p class="eyebrow reveal">Organización semanal</p>
     <h2 class="section-title reveal">Horarios</h2>
 
-    <div class="horario-tabs reveal" role="tablist">
-      <button class="horario-tab is-active" data-panel="hy" role="tab" aria-selected="true">Hot Yoga</button>
-      <button class="horario-tab" data-panel="pr" role="tab" aria-selected="false">Pilates Reformer</button>
-      <button class="horario-tab" data-panel="ba" role="tab" aria-selected="false">Hot Barre</button>
+    <div class="tabs-nav reveal" role="tablist">
+      <button class="tab-btn is-active" data-panel="hy" role="tab" aria-selected="true">Hot Yoga</button>
+      <button class="tab-btn" data-panel="pr" role="tab" aria-selected="false">Pilates Reformer</button>
+      <button class="tab-btn" data-panel="ba" role="tab" aria-selected="false">Hot Barre</button>
     </div>
 
     <!-- EDITAR: horario real de Hot Yoga (ya actualizado con el horario vigente) -->
-    <div class="horario-panel is-active reveal" data-panel="hy">
+    <div class="tab-panel is-active reveal" data-panel="hy">
       <div class="day-list">
         <details class="day-item">
           <summary><span class="day-name">Lunes</span><span class="day-count">2 clases</span></summary>
@@ -338,7 +365,7 @@
     </div>
 
     <!-- EDITAR: horario real de Pilates Reformer (en curso, dia a dia) -->
-    <div class="horario-panel" data-panel="pr" hidden>
+    <div class="tab-panel" data-panel="pr" hidden>
       <div class="day-list">
         <details class="day-item">
           <summary><span class="day-name">Lunes</span><span class="day-count">10 clases</span></summary>
@@ -416,7 +443,7 @@
     </div>
 
     <!-- EDITAR: horario de Hot Barre - confirmar duracion exacta de cada clase -->
-    <div class="horario-panel" data-panel="ba" hidden>
+    <div class="tab-panel" data-panel="ba" hidden>
       <p class="horario-pending">Disponible a partir del 1 de septiembre.</p>
       <div class="day-list">
         <details class="day-item">
@@ -448,26 +475,104 @@
   </section>
 
   <!-- ============ TARIFAS ============ -->
-  <section class="tarifas" id="tarifas">
+  <section class="tarifas" id="tarifas" data-tabgroup="tarifas">
     <p class="eyebrow reveal">Sin sorpresas</p>
     <h2 class="section-title reveal">Tarifas</h2>
+    <p class="tarifas-highlight reveal">Tu primera clase de Hot Yoga, Pilates Reformer o Hot Barre es gratis.</p>
 
-    <div class="tarifas-grid reveal">
-      <!-- EDITAR: precios reales -->
-      <div class="tarifa-row">
-        <h3>Clase suelta</h3>
-        <p class="tarifa-desc">Ideal para probar antes de comprometerte.</p>
-        <p class="tarifa-price">18€</p>
+    <div class="tabs-nav reveal" role="tablist">
+      <button class="tab-btn is-active" data-panel="hy" role="tab" aria-selected="true">Hot Yoga</button>
+      <button class="tab-btn" data-panel="pr" role="tab" aria-selected="false">Pilates Reformer</button>
+      <button class="tab-btn" data-panel="ba" role="tab" aria-selected="false">Hot Barre</button>
+      <button class="tab-btn" data-panel="cb" role="tab" aria-selected="false">Combina</button>
+    </div>
+
+    <!-- EDITAR: precios de Hot Yoga -->
+    <div class="tab-panel is-active reveal" data-panel="hy">
+      <div class="tarifas-grid">
+        <div class="tarifa-row">
+          <h3>Clase suelta</h3>
+          <p class="tarifa-desc">Para quien viene de forma esporádica, sin compromiso.</p>
+          <p class="tarifa-price">25€</p>
+        </div>
+        <div class="tarifa-row">
+          <h3>Bono 5 clases</h3>
+          <p class="tarifa-desc">Válido durante un mes.<br><span class="price-note">A partir del 1 de septiembre.</span></p>
+          <p class="tarifa-price">90€</p>
+        </div>
+        <div class="tarifa-row">
+          <h3>Bono 10 clases</h3>
+          <p class="tarifa-desc">Válido durante 2 meses.<br><span class="price-note">A partir del 1 de septiembre.</span></p>
+          <p class="tarifa-price">150€</p>
+        </div>
+        <div class="tarifa-row">
+          <h3>Mes ilimitado — alumnos nuevos</h3>
+          <p class="tarifa-desc">Tu primer mes con nosotros, para que pruebes todo lo que quieras.</p>
+          <p class="tarifa-price">79€</p>
+        </div>
+        <div class="tarifa-row">
+          <h3>Mes ilimitado</h3>
+          <p class="tarifa-desc">Todas las clases que quieras, sin límite.</p>
+          <p class="tarifa-price">99€</p>
+        </div>
       </div>
-      <div class="tarifa-row">
-        <h3>Bono 8 clases</h3>
-        <p class="tarifa-desc">Válido durante un mes, combinable entre disciplinas.</p>
-        <p class="tarifa-price">120€</p>
+    </div>
+
+    <!-- EDITAR: precios de Pilates Reformer -->
+    <div class="tab-panel" data-panel="pr" hidden>
+      <div class="tarifas-grid">
+        <div class="tarifa-row">
+          <h3>Bono 4 clases</h3>
+          <p class="tarifa-desc">Válido durante un mes.</p>
+          <p class="tarifa-price">79€</p>
+        </div>
+        <div class="tarifa-row">
+          <h3>Bono 8 clases</h3>
+          <p class="tarifa-desc">Válido durante un mes.</p>
+          <p class="tarifa-price">149€</p>
+        </div>
+        <div class="tarifa-row">
+          <h3>Bono 4 clases — grupo +65 años</h3>
+          <p class="tarifa-desc">Válido durante un mes.</p>
+          <p class="tarifa-price">60€</p>
+        </div>
       </div>
-      <div class="tarifa-row">
-        <h3>Bono mensual ilimitado</h3>
-        <p class="tarifa-desc">Todas las clases que quieras, sin límite.</p>
-        <p class="tarifa-price">159€</p>
+    </div>
+
+    <!-- EDITAR: precios de Hot Barre -->
+    <div class="tab-panel" data-panel="ba" hidden>
+      <div class="tarifas-grid">
+        <div class="tarifa-row">
+          <h3>Bono 5 clases</h3>
+          <p class="tarifa-desc">Precio de lanzamiento en septiembre.<br><span class="price-note">Después: 90€, como en Hot Yoga.</span></p>
+          <p class="tarifa-price">75€</p>
+        </div>
+        <div class="tarifa-row">
+          <h3>Bono 10 clases</h3>
+          <p class="tarifa-desc">Precio de lanzamiento en septiembre.<br><span class="price-note">Después: 150€, como en Hot Yoga.</span></p>
+          <p class="tarifa-price">130€</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- EDITAR: tarifas mixtas, en pruebas -->
+    <div class="tab-panel" data-panel="cb" hidden>
+      <div class="tarifas-grid">
+        <div class="tarifa-row">
+          <h3>4 Pilates Reformer + 4 Hot Barre</h3>
+          <p class="tarifa-desc">Válido durante un mes.</p>
+          <p class="tarifa-price">129€</p>
+        </div>
+        <div class="tarifa-row">
+          <h3>8 Pilates Reformer + 4 Hot Barre</h3>
+          <p class="tarifa-desc">Válido durante un mes.</p>
+          <p class="tarifa-price">189€</p>
+        </div>
+        <div class="tarifa-row">
+          <h3>Mes ilimitado Hot Yoga + Hot Barre</h3>
+          <p class="tarifa-desc">Todas las clases que quieras de ambas disciplinas.</p>
+          <p class="tarifa-price">130€</p>
+        </div>
       </div>
     </div>
 

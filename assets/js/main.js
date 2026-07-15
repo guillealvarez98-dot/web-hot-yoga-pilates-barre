@@ -34,21 +34,23 @@ const io = new IntersectionObserver((entries) => {
 }, { threshold: 0.15 });
 revealEls.forEach(el => io.observe(el));
 
-// ---------- Pestañas de horarios ----------
-const horarioTabs = document.querySelectorAll('.horario-tab');
-const horarioPanels = document.querySelectorAll('.horario-panel');
+// ---------- Pestañas (horarios, tarifas...) ----------
+document.querySelectorAll('[data-tabgroup]').forEach(group => {
+  const tabs = group.querySelectorAll('.tab-btn');
+  const panels = group.querySelectorAll('.tab-panel');
 
-horarioTabs.forEach(tab => {
-  tab.addEventListener('click', () => {
-    const target = tab.dataset.panel;
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const target = tab.dataset.panel;
 
-    horarioTabs.forEach(t => {
-      t.classList.toggle('is-active', t === tab);
-      t.setAttribute('aria-selected', t === tab);
-    });
-    horarioPanels.forEach(panel => {
-      panel.hidden = panel.dataset.panel !== target;
-      panel.classList.toggle('is-active', panel.dataset.panel === target);
+      tabs.forEach(t => {
+        t.classList.toggle('is-active', t === tab);
+        t.setAttribute('aria-selected', t === tab);
+      });
+      panels.forEach(panel => {
+        panel.hidden = panel.dataset.panel !== target;
+        panel.classList.toggle('is-active', panel.dataset.panel === target);
+      });
     });
   });
 });

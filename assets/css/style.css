@@ -229,9 +229,6 @@ h1, h2, h3, p { margin: 0; }
   inset: -6%;
   overflow: hidden;
   background: #1C1712;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 .hero-photo-bg {
   position: absolute;
@@ -242,18 +239,32 @@ h1, h2, h3, p { margin: 0; }
   filter: blur(60px) brightness(0.75) sepia(0.25) saturate(1.4) contrast(1.05);
   transform: scale(1.25);
 }
+/* Capa aparte, sin el -6% del fondo, para que "100%" sea el ancho real
+   de la pantalla y la foto nunca se salga por los lados */
+.hero-photo-wrap {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
 .hero-photo {
   position: relative;
-  max-width: 100%;
-  max-height: 100%;
-  width: auto;
-  height: auto;
-  object-fit: contain;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   filter: contrast(1.1) brightness(0.95);
   animation: heroDrift 22s ease-in-out infinite;
 }
 @media (min-width: 860px) {
-  .hero-photo { max-height: 92%; }
+  .hero-photo {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 92%;
+    object-fit: contain;
+  }
 }
 @keyframes heroDrift {
   0%   { transform: scale(1.02) translate(0%, 0%); }
@@ -621,6 +632,7 @@ h1, h2, h3, p { margin: 0; }
   margin: 0 auto;
   text-align: center;
 }
+.testimonios-google { display: inline-flex; margin-top: 3rem; }
 .testimonios-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -717,11 +729,11 @@ h1, h2, h3, p { margin: 0; }
 }
 @media (min-width: 640px) {
   .page-gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
-  .page-gallery-photo:nth-child(1) { grid-column: span 2; aspect-ratio: 16 / 10; }
+  .page-gallery-grid--lead .page-gallery-photo:nth-child(1) { grid-column: span 2; aspect-ratio: 16 / 10; }
 }
 @media (min-width: 960px) {
   .page-gallery-grid { grid-template-columns: repeat(3, 1fr); }
-  .page-gallery-photo:nth-child(1) { grid-column: span 3; aspect-ratio: 21 / 9; }
+  .page-gallery-grid--lead .page-gallery-photo:nth-child(1) { grid-column: span 3; aspect-ratio: 21 / 9; }
 }
 .gallery-placeholder {
   background: linear-gradient(150deg, var(--c-sand) 0%, var(--c-beige) 55%, var(--c-wood) 100%);
@@ -734,32 +746,18 @@ h1, h2, h3, p { margin: 0; }
    EL CENTRO
    ========================================================================== */
 .centro {
-  display: grid;
-  grid-template-columns: 1fr;
+  padding: var(--space-section) 1.5rem;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  text-align: center;
 }
-.centro-media {
-  aspect-ratio: 4/3;
-  background: linear-gradient(150deg, var(--c-wood) 0%, var(--c-wood-dark) 100%);
-  display: flex; align-items: center; justify-content: center;
-}
-.centro-content {
-  padding: 3.5rem 1.5rem;
+.centro-text {
   max-width: 560px;
+  margin: 3rem auto 0;
+  text-align: left;
 }
-.centro-content h2 {
-  font-family: var(--font-serif);
-  font-weight: 400;
-  font-size: clamp(1.9rem, 3.6vw, 2.6rem);
-  margin: 0.75rem 0 1.25rem;
-}
-.centro-content p { color: rgba(28,23,18,0.75); margin-bottom: 1.5rem; }
+.centro-text p { color: rgba(28,23,18,0.75); margin-bottom: 1.5rem; }
 .centro-address { font-weight: 600; color: var(--c-black) !important; }
-
-@media (min-width: 860px) {
-  .centro { grid-template-columns: 1fr 1fr; min-height: 76vh; align-items: center; }
-  .centro-media { height: 100%; aspect-ratio: auto; }
-  .centro-content { padding: 4rem 6vw; margin: 0; }
-}
 
 /* ==========================================================================
    CONTACTO

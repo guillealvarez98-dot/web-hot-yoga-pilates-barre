@@ -1,0 +1,5 @@
+# Redirecciones de URLs antiguas (web WordPress) a las páginas nuevas
+RedirectMatch 301 ^/contacto/?$ /index.html#contacto
+RedirectMatch 301 ^/disciplinas/?$ /hot-yoga.html
+RedirectMatch 301 ^/horarios/?$ /index.html#horarios
+RedirectMatch 301 ^/pilates-maquina/?$ /pilates-reformer.html

@@ -3,3 +3,12 @@ RedirectMatch 301 ^/contacto/?$ /index.html#contacto
 RedirectMatch 301 ^/disciplinas/?$ /hot-yoga.html
 RedirectMatch 301 ^/horarios/?$ /index.html#horarios
 RedirectMatch 301 ^/pilates-maquina/?$ /pilates-reformer.html
+
+# Las paginas HTML nunca se sirven desde cache (ni del navegador ni de
+# proxies intermedios) para que un cambio se vea al momento para todo
+# el mundo, aunque ya hubieran visitado la web antes
+<IfModule mod_headers.c>
+  <FilesMatch "\.html$">
+    Header set Cache-Control "no-cache, must-revalidate"
+  </FilesMatch>
+</IfModule>

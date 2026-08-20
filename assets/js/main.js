@@ -56,17 +56,8 @@ document.querySelectorAll('[data-tabgroup]').forEach(group => {
 });
 
 // ---------- Cuenta atras para el lanzamiento de Barre ----------
-const barreCountdown = document.getElementById('barreCountdown');
-if (barreCountdown) {
-  const launch = new Date('2026-09-01T00:00:00');
-  const today = new Date();
-  const diffDays = Math.ceil((launch - today) / (1000 * 60 * 60 * 24));
-  if (diffDays > 0) {
-    barreCountdown.textContent = `Faltan ${diffDays} días`;
-  } else {
-    barreCountdown.textContent = 'Ya disponible';
-  }
-}
+// Desactivada: la fecha de inicio ya no es un dia fijo (1 de septiembre),
+// asi que el badge se queda con el texto estatico "Nueva actividad".
 
 // ---------- Año en footer ----------
 document.getElementById('year').textContent = new Date().getFullYear();

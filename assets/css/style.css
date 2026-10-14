@@ -22,7 +22,7 @@
   --space-section: clamp(4rem, 10vw, 9rem);
   --container-max: 1240px;
   --header-h: 84px;
-  --announce-h: 40px;
+  --announce-h: 0px;
 
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
 }
